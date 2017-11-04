@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "author": "Mario de Biase",
+  "license": "ISC",
+  "description": "App to send email surveys",
+  "repository": "https://github.com/debiasej/node-react-fullstack-web-development.git",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "precommit": "lint-staged",
+    "lint": "standard --fix"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.3.0",
+    "standard": "^10.0.3"
+  }
+}
