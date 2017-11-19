@@ -1,5 +1,12 @@
-// Set your OAuth Google tokens here
+// Set your OAuth Google tokens here and mongose config.
+
 module.exports = {
-  googleClientID: '66949193449-3qat6sri3355fnm4d82623a3h4mu5mj0.apps.googleusercontent.com',
-  googleClientSecret: 'dNHm9xoyI5IafcteXUEFE1DS'
+  googleClientID: 'XXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com',
+  googleClientSecret: 'XXXXXXXXXXXXXXXXXXXX',
+  mongoose: {
+    mongoURI: 'mongodb://<dbuser>:<dbpassword>@XXXXX.mlab.com:XXXXX/XXXXX',
+    opts: {
+      useMongoClient: true
+    }
+  }
 }
