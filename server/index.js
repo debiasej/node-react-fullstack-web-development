@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 const keys = require('./config/keys')
 
+require('./models/user')
 require('./services/passport')
 const authRoutes = require('./routes/authRoutes')
 
