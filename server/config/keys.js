@@ -1,4 +1,4 @@
-// Set your OAuth Google tokens here and mongose config.
+// Set your OAuth Google tokens, mongose config and private key to encript user cookies.
 
 module.exports = {
   googleClientID: 'XXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com',
@@ -8,5 +8,6 @@ module.exports = {
     opts: {
       useMongoClient: true
     }
-  }
+  },
+  cookieKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 }

@@ -2,6 +2,8 @@ const express = require('express')
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
+const cookieSession = require('cookie-session')
+const passport = require('passport')
 const keys = require('./config/keys')
 
 require('./models/user')
@@ -16,6 +18,17 @@ mongoose.connect(mongoseConfig.mongoURI, mongoseConfig.opts)
   )
 
 const app = express()
+
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000, // last 30 days
+    keys: [keys.cookieKey]
+  })
+)
+
+app.use(passport.initialize())
+app.use(passport.session())
+
 authRoutes(app)
 
 const PORT = process.env.PORT || 5000
