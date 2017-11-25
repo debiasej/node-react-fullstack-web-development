@@ -1,13 +1,9 @@
-// Set your OAuth Google tokens, mongose config and private key to encript user cookies.
+// key.js - figure out what set of credentials to return
 
-module.exports = {
-  googleClientID: 'XXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com',
-  googleClientSecret: 'XXXXXXXXXXXXXXXXXXXX',
-  mongoose: {
-    mongoURI: 'mongodb://<dbuser>:<dbpassword>@XXXXX.mlab.com:XXXXX/XXXXX',
-    opts: {
-      useMongoClient: true
-    }
-  },
-  cookieKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+if (process.env.NODE_ENV === 'production') {
+  // we are in production - return the prod set of keys
+  module.exports = require('./prod')
+} else {
+  // return the dev keys
+  module.exports = require('./dev')
 }
