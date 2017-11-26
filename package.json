@@ -9,12 +9,17 @@
   "scripts": {
     "start": "node server/index.js",
     "precommit": "lint-staged",
-    "lint": "standard --fix"
+    "lint": "standard --fix --env mocha"
   },
   "lint-staged": {
     "*.js": [
       "npm run lint",
       "git add"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "registerServiceWorker.js"
     ]
   },
   "dependencies": {},
