@@ -4,6 +4,11 @@
   "author": "Mario de Biase",
   "license": "ISC",
   "description": "client side app to send surveys",
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:5000"
+    }
+  },
   "dependencies": {
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
