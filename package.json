@@ -10,18 +10,12 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
-    "precommit": "lint-staged",
-    "lint": "standard --fix --env mocha"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
-      "npm run lint",
+      "npm run lint --prefix client",
       "git add"
-    ]
-  },
-  "standard": {
-    "ignore": [
-      "registerServiceWorker.js"
     ]
   },
   "dependencies": {
@@ -29,7 +23,6 @@
   },
   "devDependencies": {
     "husky": "^0.14.3",
-    "lint-staged": "^4.3.0",
-    "standard": "^10.0.3"
+    "lint-staged": "^4.3.0"
   }
 }
