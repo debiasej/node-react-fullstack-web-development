@@ -15,6 +15,7 @@
   "lint-staged": {
     "*.js": [
       "npm run lint --prefix client",
+      "npm run lint --prefix server",
       "git add"
     ]
   },
