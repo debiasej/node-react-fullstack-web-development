@@ -34,7 +34,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  auth: PropTypes.object
+  auth: PropTypes.bool
 }
 
 function mapStateToProps ({ auth }) {
