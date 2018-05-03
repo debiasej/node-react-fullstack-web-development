@@ -20,7 +20,8 @@
     "express": "^4.16.2",
     "mongoose": "^4.13.4",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "stripe": "^5.8.0"
   },
   "devDependencies": {
     "eslint": "^4.19.0",
