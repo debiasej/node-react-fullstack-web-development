@@ -9,6 +9,7 @@ const keys = require('./config/keys')
 const path = require('path')
 
 require('./models/user')
+require('./models/survey')
 require('./services/passport')
 const authRoutes = require('./routes/authRoutes')
 const billingRoutes = require('./routes/billingRoutes')
