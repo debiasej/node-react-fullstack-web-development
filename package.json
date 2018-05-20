@@ -18,7 +18,7 @@
     "precommit": "lint-staged",
     "heroku-postbuild": "npm run server-install && npm run client-install && npm run build --prefix client",
     "server-install": "npm install --prefix server",
-    "client-install": "npm install --prefix client"
+    "client-install": "NPM_CONFIG_PRODUCTION=false npm install --prefix client"
   },
   "lint-staged": {
     "*.js": [
