@@ -13,6 +13,7 @@ require('./models/survey')
 require('./services/passport')
 const authRoutes = require('./routes/authRoutes')
 const billingRoutes = require('./routes/billingRoutes')
+const surveyRoutes = require('./routes/surveyRoutes')
 
 const mongoseConfig = keys.mongoose
 mongoose.connect(mongoseConfig.mongoURI, mongoseConfig.opts)
@@ -36,6 +37,7 @@ app.use(passport.session())
 
 authRoutes(app)
 billingRoutes(app)
+surveyRoutes(app)
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
