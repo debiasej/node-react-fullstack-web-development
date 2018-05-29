@@ -30,6 +30,10 @@ const routes = (app) => {
       res.status(402).send(err)
     }
   })
+
+  app.get('/api/surveys/thanks', (req, res) => {
+    res.send('Thank you for voting!')
+  })
 }
 
 module.exports = routes
