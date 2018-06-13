@@ -8,10 +8,10 @@ import _ from 'lodash'
 import SurveyField from './SurveyField'
 
 const FIELDS = [
-  { label: 'Survey Title', name: 'title' },
-  { label: 'Subject Line', name: 'subject' },
-  { label: 'Email Body', name: 'body' },
-  { label: 'Recipient List', name: 'emails' }
+  { label: 'Survey Title', name: 'title', errorMsg: 'You must provide a title' },
+  { label: 'Subject Line', name: 'subject', errorMsg: 'You must provide a subject' },
+  { label: 'Email Body', name: 'body', errorMsg: 'You must provide a body' },
+  { label: 'Recipient List', name: 'emails', errorMsg: 'You must provide a list of emails' }
 ]
 
 class SurveyForm extends Component {
@@ -49,11 +49,11 @@ SurveyForm.propTypes = {
 
 function validate (values) {
   const errors = {}
-
-  if (!values.title) {
-    errors.title = 'You must provide a title'
-  }
-
+  _.each(FIELDS, ({name, errorMsg}) => {
+    if (!values[name]) {
+      errors[name] = errorMsg
+    }
+  })
   return errors
 }
 

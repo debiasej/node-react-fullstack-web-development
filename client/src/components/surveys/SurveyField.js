@@ -8,8 +8,10 @@ const SurveyField = ({input, label, meta: {error, touched}}) => {
     <div>
       <label>{label}</label>
       {/* avoid us to write: onBlur={input.onBlur onChange={input.onChange} and so... */}
-      <input {...input} />
-      {touched && error}
+      <input {...input} style={{ marginBottom: '5px' }} />
+      <div className='red-text' style={{ marginBottom: '20px' }}>
+        {touched && error}
+      </div>
     </div>
   )
 }
