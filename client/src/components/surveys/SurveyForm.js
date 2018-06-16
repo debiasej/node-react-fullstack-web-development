@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import _ from 'lodash'
 
 import SurveyField from './SurveyField'
+import validateEmails from '../../utils/validateEmails'
 
 const FIELDS = [
   { label: 'Survey Title', name: 'title', errorMsg: 'You must provide a title' },
@@ -49,6 +50,7 @@ SurveyForm.propTypes = {
 
 function validate (values) {
   const errors = {}
+  errors.emails = validateEmails(values.emails || '')
   _.each(FIELDS, ({name, errorMsg}) => {
     if (!values[name]) {
       errors[name] = errorMsg
