@@ -28,7 +28,7 @@ class SurveyForm extends Component {
     return (
       <div>
         <form
-          onSubmit={this.props.handleSubmit(values => console.log(values))}
+          onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}
         >
           {this.renderFields()}
           <Link to='/surveys' className='red btn-flat white-text'>
@@ -45,7 +45,8 @@ class SurveyForm extends Component {
 }
 
 SurveyForm.propTypes = {
-  handleSubmit: PropTypes.func // This function is provided by redux-form
+  handleSubmit: PropTypes.func, // This function is provided by redux-form
+  onSurveySubmit: PropTypes.func
 }
 
 function validate (values) {
