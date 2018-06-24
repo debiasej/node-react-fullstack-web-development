@@ -15,21 +15,27 @@
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "precommit": "lint-staged",
     "heroku-postbuild": "npm run server-install && npm run client-install && npm run build --prefix client",
     "server-install": "npm install --prefix server",
     "client-install": "NPM_CONFIG_PRODUCTION=false npm install --prefix client"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.js": [
-      "npm run lint --prefix server",
-      "git add"
-    ]
+    "linters": {
+      "*.js": [
+        "npm run prettier --prefix server && npm run prettier --prefix client",
+        "git add"
+      ]
+    }
   },
   "dependencies": {},
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.1.0"
+    "husky": "^1.0.0-rc.9",
+    "lint-staged": "^7.2.0"
   }
 }

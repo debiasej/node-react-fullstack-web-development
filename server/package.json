@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prettier": "prettier --write --no-semi --single-quote \"*.js\""
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -29,6 +30,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "prettier": "^1.13.5"
   }
 }

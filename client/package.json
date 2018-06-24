@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write --no-semi --single-quote \"*.js\""
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -31,5 +32,8 @@
     "redux": "^4.0.0",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.13.5"
   }
 }
